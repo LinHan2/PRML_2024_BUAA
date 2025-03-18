@@ -1,19 +1,19 @@
-## 线性模型拟合
+## <center>线性模型拟合<center>
 
 <center>韩琳<center>
     </center>hanlin3309@163.com</center>
 
-### Abstract
+### <center>Abstract<center>
 
 ​	该作业使用题目给出的三种线性方法对数据进行拟合，归一化后得到的训练误差和测试误差都大于0.6，拟合效果不佳，所以本文又尝试使用n次多项式拟合，最终发现项数为11的多项式拟合效果最好，MSE在测试集上显著下降到0.33，尝试使用SVR回归，MSE下降至0.26，体现了数据分布的非线性关系。
 
-### Introduction
+### <center>Introduction<center>
 
 ​	
 
 ​	**线性回归**（Linear Regression）是一种统计学方法，用于研究一个或多个自变量（特征）与因变量（目标变量）之间的关系。通过建立自变量和因变量之间的线性关系，线性回归能够对因变量进行预测。在简单的线性回归模型中，目标是通过一条直线来拟合数据，使得预测值与真实值之间的误差最小化，即求得$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$的最小化。本作业对训练数据使用最小二乘法、梯度下降法(GD)和牛顿法等常见线性拟合方法进行线性回归拟合，并在测试集上验证拟合效果。本作业给出的数据集分布呈非线性，故在线性方法拟合不佳时通过非线性拟合方式进行回归拟合，在验证集上得到较好结果。
 
-### Methodology
+### <center>Methodology<center>
 
 #### 	1.最小二乘法(Least Squares Method)
 
@@ -109,7 +109,7 @@ $$
 - 高斯核（RBF核）：$$ K(x, x') = \exp\left(-\frac{\|x - x'\|^2}{2\sigma^2}\right) $$
 本实验中使用高斯核函数，对非线性数据进行拟合
 
-### Experimental Studies
+### <center>Experimental Studies<center>
 
 - 三种线性拟合方法得到的拟合直线图和误差值如下
 
@@ -136,6 +136,6 @@ $$
 ![image-20250318220854395](D:\学习资料\大三下\模式识别\assignments\assignment1.assets\image-20250318220854395.png)
 
 
-### Conclusions
+### <center>Conclusions<center>
 
 三种线性拟合效果一致，都不能很好拟合数据，多项式拟合得到的MSE显著小于线性拟合，SVR曲线拟合得到的MSE最小，随机森林虽然在训练集上得到的MSE较小，但是在测试集上泛化效果不佳，拟合曲线离散化，只能显示出数据的变化趋势。
